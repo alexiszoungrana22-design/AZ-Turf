@@ -1,5 +1,10 @@
 from backend.config import WEIGHTS
 
+def calcul_forme(musique: float):
+
+    return round(musique * 10, 2)
+
+
 def calcul_indice(cheval):
 
     score = (
@@ -12,7 +17,7 @@ def calcul_indice(cheval):
         + cheval.valeur * WEIGHTS["valeur"] / 10
         + cheval.corde * WEIGHTS["corde"] / 5
         + cheval.cote * WEIGHTS["cote"] / 10
-        + cheval.musique * WEIGHTS["musique"] / 10
+        + calcul_forme(cheval.musique)
     )
 
     return round(score, 2)
