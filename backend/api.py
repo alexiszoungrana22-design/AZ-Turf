@@ -1,6 +1,6 @@
-from backend.engine import AZEngine
 from fastapi import APIRouter
 from backend.models import Cheval
+from backend.engine import AZEngine
 from backend.ranking import classer_chevaux
 from backend.quinte import generer_ticket
 
