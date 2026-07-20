@@ -1,19 +1,14 @@
-from backend.ranking import classer_chevaux
+def generer_ticket(classement):
 
-def generer_ticket(chevaux):
-
-    classement = classer_chevaux(chevaux)
+    numeros = [c.numero for c in classement]
 
     return {
-
-        "Base 1": classement[0],
-        "Base 2": classement[1],
-
-        "Chance 1": classement[2],
-        "Chance 2": classement[3],
-        "Chance 3": classement[4],
-
-        "Outsider 1": classement[5],
-        "Outsider 2": classement[6]
-
+        "quinte": numeros[:5],
+        "tierce": numeros[:3],
+        "couple_gagnant": numeros[:2],
+        "couple_place": [numeros[0], numeros[2]] if len(numeros) >= 3 else [],
+        "bases": numeros[:2],
+        "chances": numeros[2:5],
+        "outsiders": numeros[5:7],
+        "confiance": 90
     }
