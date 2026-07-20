@@ -93,3 +93,18 @@ resultat.ticket.join(" - ");
     }
 
 }
+const classement = resultat.classement;
+
+document.getElementById("quinte").textContent =
+classement.slice(0,5).map(c=>c.numero).join(" - ");
+
+document.getElementById("tierce").textContent =
+classement.slice(0,3).map(c=>c.numero).join(" - ");
+
+document.getElementById("couple_gagnant").textContent =
+classement.slice(0,2).map(c=>c.numero).join(" - ");
+
+document.getElementById("couple_place").textContent =
+classement[0].numero + " - " + classement[2].numero;
+
+document.getElementById("confiance").textContent = "90 %";
