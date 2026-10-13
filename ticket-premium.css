@@ -1,0 +1,1019 @@
+/* =====================================
+   AZ TURF PRO
+   TICKET PREMIUM CSS
+   VERSION FINALE RESPONSIVE
+===================================== */
+
+
+/* =====================================
+   CONTENEUR
+===================================== */
+
+.premium-container{
+
+    width:100%;
+    max-width:1100px;
+
+    margin:0 auto;
+    padding:15px;
+
+    box-sizing:border-box;
+}
+
+
+/* =====================================
+   HEADER
+===================================== */
+
+.premium-header{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:22px 15px;
+
+    border-radius:22px;
+
+    box-sizing:border-box;
+}
+
+
+.premium-logo{
+
+    font-size:29px;
+    font-weight:900;
+}
+
+
+.premium-title h1{
+
+    font-size:27px;
+    margin:10px 0;
+}
+
+
+/* =====================================
+   RETOUR
+===================================== */
+
+.premium-back{
+
+    width:100%;
+
+    text-align:center;
+
+    margin:18px 0;
+}
+
+
+.premium-back a{
+
+    display:inline-block;
+
+    padding:12px 20px;
+
+    border-radius:15px;
+
+    font-weight:bold;
+
+    box-sizing:border-box;
+
+    transition:
+        transform .12s ease,
+        opacity .12s ease,
+        box-shadow .12s ease;
+
+    -webkit-tap-highlight-color:transparent;
+
+    touch-action:manipulation;
+}
+
+
+.premium-back a:active{
+
+    transform:
+        translateY(2px)
+        scale(.96);
+
+    opacity:.86;
+
+}
+
+
+/* =====================================
+   BANNIERE
+===================================== */
+
+.premium-banner{
+
+    width:100%;
+
+    text-align:center;
+
+    padding:24px 15px;
+
+    border-radius:22px;
+
+    margin:18px 0;
+
+    box-sizing:border-box;
+}
+
+
+/* =====================================
+   CARTES
+===================================== */
+
+.premium-card,
+.premium-message{
+
+    width:100%;
+    max-width:100%;
+
+    padding:21px 16px;
+
+    margin:20px 0;
+
+    border-radius:22px;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+
+.premium-card h2,
+.premium-message h2{
+
+    text-align:center;
+
+    font-size:22px;
+
+    margin:0 0 14px;
+}
+
+
+/* =====================================
+   ZONE TICKETS
+===================================== */
+
+.tickets-premium{
+
+    width:100%;
+    max-width:100%;
+
+    padding:8px;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+
+/* =====================================
+   CARTE TICKET
+===================================== */
+
+.ticket-premium-box{
+
+    width:100%;
+    max-width:100%;
+
+    min-width:0;
+
+    min-height:125px;
+
+    margin:17px 0;
+
+    padding:18px 10px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+
+.ticket-premium-box h3{
+
+    width:100%;
+
+    margin:0 0 12px;
+
+    font-size:19px;
+
+    font-weight:900;
+
+    text-align:center;
+
+    box-sizing:border-box;
+}
+
+
+/* =====================================
+   NUMEROS GENERAUX
+===================================== */
+
+.numero-ticket,
+.ticket-grand{
+
+    display:block;
+
+    width:100%;
+    max-width:100%;
+
+    min-width:0;
+
+    margin:0 auto;
+
+    padding:7px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:900;
+
+    line-height:1.35;
+
+    letter-spacing:0;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+
+    word-break:normal;
+}
+
+
+/* =====================================
+   QUINTE PREMIUM
+   6 CHEVAUX
+   TAILLE REDUITE
+===================================== */
+
+#quinte-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:7px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:18px;
+    font-weight:900;
+
+    line-height:1.35;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+}
+
+
+/* =====================================
+   QUARTE PREMIUM
+   5 CHEVAUX
+   TAILLE REDUITE
+===================================== */
+
+#quarte-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:7px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:20px;
+    font-weight:900;
+
+    line-height:1.35;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+}
+
+
+/* =====================================
+   TRIO PREMIUM
+   3 CHEVAUX
+===================================== */
+
+#trio-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:7px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:21px;
+    font-weight:900;
+
+    line-height:1.35;
+
+    white-space:normal;
+
+    overflow:visible;
+}
+
+
+/* =====================================
+   COUPLES PREMIUM
+   3 COUPLES
+===================================== */
+
+#couple-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:7px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:16px;
+    font-weight:900;
+
+    line-height:1.45;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+}
+
+
+/* =====================================
+   CHAMP REDUIT
+===================================== */
+
+#champ-reduit-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:7px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:15px;
+    font-weight:900;
+
+    line-height:1.45;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+}
+
+
+/* =====================================
+   SELECTION PREMIUM
+   7 CHEVAUX
+   PLUS GRANDE
+===================================== */
+
+.chevaux-premium,
+#selection-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:9px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:24px;
+
+    font-weight:900;
+
+    line-height:1.4;
+
+    letter-spacing:0;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+}
+
+
+/* =====================================
+   DERNIERE MINUTE
+   PLUS GRANDE
+===================================== */
+
+#derniere-minute-premium{
+
+    width:100%;
+    max-width:100%;
+    min-width:0;
+
+    margin:0 auto;
+    padding:9px 4px;
+
+    box-sizing:border-box;
+
+    text-align:center;
+
+    font-size:23px;
+
+    font-weight:900;
+
+    line-height:1.4;
+
+    white-space:normal;
+
+    overflow:visible;
+
+    overflow-wrap:break-word;
+}
+
+
+/* =====================================
+   ANALYSE
+===================================== */
+
+.analyse-premium-zone{
+
+    width:100%;
+
+    line-height:1.8;
+
+    box-sizing:border-box;
+}
+
+
+/* =====================================
+   EXPLICATION
+===================================== */
+
+#explication-premium{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+#message-premium{
+
+    width:100%;
+
+    text-align:center;
+
+    line-height:1.7;
+
+    box-sizing:border-box;
+
+    overflow:visible;
+}
+
+
+/* =====================================
+   BOUTONS ABONNEMENT / ACTIVATION
+   EFFET D'APPUI
+   SANS MODIFIER LE FONCTIONNEMENT
+===================================== */
+
+.btn-abonnement,
+.btn-activation,
+#btn-abonnement,
+#btn-activation{
+
+    transition:
+        transform .12s ease,
+        opacity .12s ease,
+        box-shadow .12s ease;
+
+    -webkit-tap-highlight-color:transparent;
+
+    touch-action:manipulation;
+
+    cursor:pointer;
+}
+
+
+.btn-abonnement:active,
+.btn-activation:active,
+#btn-abonnement:active,
+#btn-activation:active{
+
+    transform:
+        translateY(2px)
+        scale(.96);
+
+    opacity:.86;
+
+}
+
+
+/* =====================================
+   MENU BAS
+===================================== */
+
+@media(min-width:701px){
+
+    .bottom-menu{
+        display:none;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media(max-width:700px){
+
+    .premium-container{
+
+        width:100%;
+        max-width:100%;
+
+        padding:7px;
+
+        box-sizing:border-box;
+    }
+
+
+    .premium-header{
+
+        padding:19px 9px;
+
+        border-radius:19px;
+    }
+
+
+    .premium-logo{
+        font-size:25px;
+    }
+
+
+    .premium-title h1{
+        font-size:23px;
+    }
+
+
+    .premium-card,
+    .premium-message{
+
+        padding:17px 9px;
+
+        margin:15px 0;
+
+        border-radius:18px;
+    }
+
+
+    .premium-card h2,
+    .premium-message h2{
+        font-size:19px;
+    }
+
+
+    .premium-banner{
+
+        padding:19px 9px;
+
+        margin:15px 0;
+
+        border-radius:19px;
+    }
+
+
+    .tickets-premium{
+
+        width:100%;
+
+        padding:4px;
+
+        box-sizing:border-box;
+    }
+
+
+    .ticket-premium-box{
+
+        width:100%;
+
+        min-width:0;
+
+        min-height:115px;
+
+        margin:15px 0;
+
+        padding:17px 7px;
+
+        border-radius:18px;
+
+        overflow:visible;
+    }
+
+
+    .ticket-premium-box h3{
+
+        font-size:18px;
+
+        margin-bottom:9px;
+    }
+
+
+    /* ================================
+       QUINTE — 6
+    ================================ */
+
+    #quinte-premium{
+
+        font-size:16px;
+
+        padding:7px 2px;
+    }
+
+
+    /* ================================
+       QUARTE — 5
+    ================================ */
+
+    #quarte-premium{
+
+        font-size:18px;
+
+        padding:7px 2px;
+    }
+
+
+    /* ================================
+       TRIO — 3
+    ================================ */
+
+    #trio-premium{
+
+        font-size:20px;
+
+        padding:7px 2px;
+    }
+
+
+    /* ================================
+       COUPLES
+    ================================ */
+
+    #couple-premium{
+
+        font-size:15px;
+
+        padding:7px 2px;
+    }
+
+
+    /* ================================
+       CHAMP REDUIT
+    ================================ */
+
+    #champ-reduit-premium{
+
+        font-size:14px;
+
+        padding:7px 2px;
+    }
+
+
+    /* ================================
+       SELECTION — 7
+       PLUS GRANDE
+    ================================ */
+
+    .chevaux-premium,
+    #selection-premium{
+
+        font-size:22px;
+
+        padding:9px 2px;
+    }
+
+
+    /* ================================
+       DERNIERE MINUTE
+       PLUS GRANDE
+    ================================ */
+
+    #derniere-minute-premium{
+
+        font-size:21px;
+
+        padding:9px 2px;
+    }
+
+
+    /* ================================
+       BOUTONS
+    ================================ */
+
+    .btn-abonnement,
+    .btn-activation,
+    #btn-abonnement,
+    #btn-activation{
+
+        -webkit-tap-highlight-color:transparent;
+
+        transition:
+            transform .10s ease,
+            opacity .10s ease;
+    }
+
+
+    .btn-abonnement:active,
+    .btn-activation:active,
+    #btn-abonnement:active,
+    #btn-activation:active{
+
+        transform:
+            translateY(2px)
+            scale(.95);
+
+        opacity:.84;
+    }
+
+}
+
+
+/* =====================================
+   TRES PETITS TELEPHONES
+===================================== */
+
+@media(max-width:380px){
+
+    #quinte-premium{
+        font-size:15px;
+    }
+
+
+    #quarte-premium{
+        font-size:17px;
+    }
+
+
+    #trio-premium{
+        font-size:19px;
+    }
+
+
+    #couple-premium{
+        font-size:14px;
+    }
+
+
+    #champ-reduit-premium{
+        font-size:13px;
+    }
+
+
+    .chevaux-premium,
+    #selection-premium{
+        font-size:20px;
+    }
+
+
+    #derniere-minute-premium{
+        font-size:19px;
+    }
+
+}
+
+
+/* =====================================
+   SECURITE
+   AUCUN DEFILEMENT HORIZONTAL
+===================================== */
+
+html,
+body{
+
+    max-width:100%;
+
+    overflow-x:hidden;
+}
+/* =========================================================
+   AZ TURF PRO - STYLES HISTORIQUE & PRONOSTICS VIP
+   ========================================================= */
+
+/* Conteneur principal de l'historique */
+#conteneur-historique {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+/* Carte de course archivée en style sombre épuré */
+.carte-historique {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.carte-historique:hover {
+    border-color: #f59e0b;
+    transform: translateY(-2px);
+}
+
+/* En-tête de la carte (Date & Réunion) */
+.entete-historique {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+}
+
+.date-course {
+    color: #f59e0b; /* Doré VIP */
+    font-weight: 700;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reunion-course {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #0f172a;
+    padding: 4px 10px;
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+}
+
+/* Contenu interne : Lignes de pronostics */
+.corps-historique {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.ligne-prono, .ligne-arrivee {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ligne-prono strong, .ligne-arrivee strong {
+    color: #cbd5e1;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Conteneur flex pour l'alignement des pastilles */
+.pastilles-conteneur {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Pastilles de numéros modernes (Balles bleues lumineuses) */
+.numero-cheval {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 6px rgba(37, 99, 235, 0.4);
+}
+
+/* Pastille X pour Champ Réduit */
+.numero-cheval-x {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 3px 6px rgba(217, 119, 6, 0.4);
+}
+
+.separateur-champ {
+    color: #f59e0b;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0 4px;
+}
+
+/* Pied de la carte / Badges de gains */
+.pied-historique {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.badge-gain-ordre {
+    background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.badge-gain-desordre {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* Messages d'état */
+.message-vide, .message-erreur {
+    text-align: center;
+    padding: 30px;
+    background: #1e293b;
+    border-radius: 12px;
+    color: #94a3b8;
+    border: 1px dashed #334155;
+    font-size: 0.95rem;
+}

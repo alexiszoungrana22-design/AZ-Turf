@@ -1,0 +1,363 @@
+/* ==========================================
+   AZ TURF PRO - DESIGN GLOBAL HARMONISÉ
+========================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding-bottom: 70px;
+}
+
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* En-tête de l'application */
+.top-header {
+    background: #1e293b;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo span {
+    font-weight: 800;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.mini-countdown {
+    font-size: 11px;
+    color: #f59e0b;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+.top-menu {
+    display: flex;
+    gap: 12px;
+}
+
+.top-menu a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.top-menu a.active {
+    color: #38bdf8;
+}
+
+.btn-vip {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Cartes générales (Fond Blanc Neige) */
+.card {
+    background: #ffffff;
+    color: #0f172a;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.card h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #1e293b;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 4px;
+}
+
+/* ==========================================
+   BANDEAU PMU COMPACT (CLONE EXACT FIXÉ)
+========================================== */
+
+.pmu-clone-header {
+    padding: 0 !important;
+    border: none;
+}
+
+.clone-tabs {
+    display: flex;
+    background-color: #71717a;
+    width: 100%;
+}
+
+.clone-tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.clone-tab.active {
+    background-color: #3f3f46;
+    border-bottom: 3px solid #dc2626;
+}
+
+/* Corps sans espace exagéré */
+.clone-body {
+    padding: 12px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; /* Réduit l'écartement entre les lignes */
+}
+
+.clone-title {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.clone-subtitle {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-weight: 900;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Cache les éléments vides sans créer de blancs */
+.clone-subtitle:empty, 
+.clone-date:empty,
+#meta-course:empty {
+    display: none;
+}
+
+.clone-date {
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+    color: #27272a;
+    margin: 0;
+}
+
+.clone-infos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 6px 0;
+}
+
+.clone-info-text {
+    font-size: 13px;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+/* Ligne du bas : Compte à rebours & Badges */
+.clone-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.clone-timer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #047857;
+}
+
+.clone-badges {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pmu-badge {
+    transform: skewX(-15deg);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.pmu-badge span {
+    transform: skewX(15deg);
+    font-size: 10px;
+    font-weight: 800;
+    font-style: italic;
+    color: #ffffff;
+    display: block;
+}
+
+.badge-simple { background: #0284c7; }
+.badge-couple { background: #ea580c; }
+.badge-2sur4  { background: #7c3aed; }
+.badge-multi  { background: #db2777; }
+.badge-tierce { background: #059669; }
+.badge-quarte { background: #2563eb; }
+.badge-quinte { background: #dc2626; }
+
+/* ==========================================
+   AUTRES SECTIONS (ANALYSE & COMPOSANTS)
+========================================== */
+
+.analyse-az-container {
+    display: flex;
+    gap: 10px;
+}
+
+.az-box {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+}
+
+.favori-az { border-left: 4px solid #16a34a; }
+.outsider-az { border-left: 4px solid #ea580c; }
+
+.az-numero {
+    font-size: 20px;
+    font-weight: 900;
+    width: 32px;
+    height: 32px;
+    background: #16a34a;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.outsider-numero { background: #ea580c; }
+
+/* Tableau */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+th { background: #f1f5f9; font-weight: 700; }
+
+/* Surveillance chevaux */
+.surveillance-box {
+    color: #000000 !important;
+}
+
+/* Navigation Basse Mobile */
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    border-top: 1px solid #334155;
+    z-index: 1000;
+}
+
+.bottom-menu a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.bottom-menu a.active {
+    color: #38bdf8;
+}
+
+.menu-icon {
+    font-size: 18px;
+    margin-bottom: 2px;
+}
+
+/* Publicité & Bande Défilante */
+.pub-box { padding: 0 !important; }
+.slider-pub img { width: 100%; height: auto; display: block; }
+
+.news-bar {
+    background: #1e293b;
+    color: #f59e0b;
+    padding: 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .top-menu { display: none; }
+    .analyse-az-container { flex-direction: column; }
+}
+
+
+/* Heure réelle de départ de la course du jour */
+.heure-depart-course{
+    display:inline-flex;
+    align-items:center;
+    margin-left:8px;
+    padding:4px 8px;
+    border-radius:8px;
+    background:#fff7ed;
+    color:#b45309;
+    font-weight:800;
+    font-size:12px;
+    white-space:nowrap;
+}

@@ -1,0 +1,209 @@
+/* ========================================================= */
+/* AZ TURF PRO - FEUILLE DE STYLE DES MODULES               */
+/* ========================================================= */
+
+/* --- SECTION STATISTIQUES & BACKTESTING --- */
+.stats-container {
+  background: #0f172a;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+.backtest-card {
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group input {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 6px;
+  width: 80px;
+}
+
+.btn-analyser {
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.stat-box {
+  background: #1e293b;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.stat-val {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.stat-box.highlight {
+  border: 1px solid #10b981;
+}
+
+/* --- WIDGET CHATBOT FLOTTANT --- */
+#az-chat-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#az-chatbot-window {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 350px;
+  height: 480px;
+  background: #1e293b;
+  color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.chat-hidden {
+  display: none !important;
+}
+
+.chat-header {
+  background: #0f172a;
+  padding: 14px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message.bot {
+  background: #334155;
+  align-self: flex-start;
+  color: #f8fafc;
+}
+
+.message.user {
+  background: #10b981;
+  align-self: flex-end;
+  color: #ffffff;
+}
+
+.chat-suggestions {
+  display: flex;
+  gap: 6px;
+  padding: 8px;
+  background: #0f172a;
+  overflow-x: auto;
+}
+
+.chat-suggestions button {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #cbd5e1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 8px;
+  background: #0f172a;
+  gap: 6px;
+}
+
+.chat-footer input {
+  flex: 1;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #ffffff;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.chat-footer button {
+  background: #10b981;
+  border: none;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  }

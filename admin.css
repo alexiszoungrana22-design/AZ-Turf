@@ -1,0 +1,334 @@
+/* =====================================
+   AZ TURF PRO
+   ADMIN CSS V3
+   Dashboard Professionnel
+   ===================================== */
+
+
+/* BASE */
+
+body{
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+}
+
+
+/* HEADER */
+
+.header-az{
+
+    padding:25px 15px;
+    text-align:center;
+
+}
+
+
+.logo-area h1{
+
+    font-size:30px;
+    font-weight:800;
+
+}
+
+
+.logo-area p{
+
+    font-size:16px;
+
+}
+
+
+
+/* INTRO DASHBOARD */
+
+.course-card{
+
+    border-radius:24px;
+
+    padding:25px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.12);
+
+}
+
+
+
+.course-card h2{
+
+    font-size:25px;
+
+}
+
+
+
+/* BOUTON PRINCIPAL */
+
+.btn-vip{
+
+    border:none;
+
+    padding:14px 25px;
+
+    border-radius:16px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:all .15s ease;
+
+}
+
+
+.btn-vip:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+.btn-vip:active{
+
+    transform:scale(.92);
+
+}
+
+
+
+
+/* GRILLE DASHBOARD */
+
+.ticket-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+}
+
+
+
+/* CARTES */
+
+.box.premium{
+
+    border-radius:25px;
+
+    padding:22px;
+
+    text-align:center;
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.12);
+
+    transition:.25s;
+
+}
+
+
+.box.premium:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* TITRES */
+
+.box h2{
+
+    font-size:19px;
+
+    font-weight:800;
+
+}
+
+
+
+/* STATISTIQUES */
+
+#total-abonnements,
+#nombre-premium,
+#paiements-attente,
+#abonnements-expire{
+
+
+    font-size:48px;
+
+    font-weight:900;
+
+    margin:15px 0;
+
+}
+
+
+
+/* FORMULAIRES */
+
+input{
+
+
+    width:88%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    border:1px solid #ddd;
+
+    font-size:16px;
+
+    margin:10px auto;
+
+    display:block;
+
+
+}
+
+
+
+input:focus{
+
+    outline:none;
+
+}
+
+
+
+/* RESULTATS */
+
+#resultat-premium,
+#resultat-activation{
+
+
+    margin-top:15px;
+
+    padding:14px;
+
+    border-radius:15px;
+
+    font-weight:700;
+
+}
+
+
+
+/* LISTE ABONNEMENTS */
+
+#liste-abonnements{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+
+
+.abonnement{
+
+
+    border-radius:18px;
+
+    padding:16px;
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,.10);
+
+}
+
+
+.abonnement p{
+
+    margin:7px 0;
+
+    font-size:15px;
+
+}
+
+
+
+/* MENU */
+
+.menu a{
+
+    transition:.2s;
+
+}
+
+
+.menu a:active{
+
+    transform:scale(.9);
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+}
+
+
+
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+
+.course-card h2{
+
+    font-size:21px;
+
+}
+
+
+
+.box.premium{
+
+    padding:18px;
+
+}
+
+
+
+#total-abonnements,
+#nombre-premium,
+#paiements-attente,
+#abonnements-expire{
+
+    font-size:38px;
+
+}
+
+
+
+.btn-vip{
+
+    width:90%;
+
+}
+
+
+}
