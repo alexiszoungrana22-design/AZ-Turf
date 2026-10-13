@@ -1,12 +1,10 @@
-WEIGHTS = {
-    "forme": 20,
-    "regularite": 15,
-    "distance": 10,
-    "terrain": 10,
-    "jockey": 10,
-    "entraineur": 10,
-    "valeur": 10,
-    "corde": 5,
-    "cote": 10,
-    "musique": 10
-}
+import os
+
+APP_NAME = "AZ Turf Pro"
+VERSION = "1.0"
+
+# Secret d'administration fourni uniquement par l'environnement serveur.
+# Ne jamais mettre cette valeur dans le frontend ou dans Git.
+ADMIN_API_KEY = os.getenv("AZ_ADMIN_API_KEY", "").strip()
+# Secret de signature des jetons d'accès Premium. Obligatoire côté serveur.
+PREMIUM_ACCESS_SECRET = os.getenv("AZ_PREMIUM_ACCESS_SECRET", "").strip()

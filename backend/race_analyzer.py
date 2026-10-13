@@ -1,0 +1,209 @@
+"""
+AZ TURF PRO - LECTURE CONTEXTUELLE PREMIUM
+
+Couche additive : elle ne remplace aucun calcul historique.
+Elle sert uniquement a enrichir l'Indice Premium avec le contexte de la course.
+"""
+
+
+def _float(value, default=0.0):
+    try:
+        if value is None or value == "":
+            return float(default)
+        return float(value)
+    except (TypeError, ValueError):
+        return float(default)
+
+
+def _text(value):
+    return str(value or "").strip().upper()
+
+
+def _first(d, keys, default=None):
+    if not isinstance(d, dict):
+        return default
+    for key in keys:
+        value = d.get(key)
+        if value not in (None, "", []):
+            return value
+    return default
+
+
+def _distance(course):
+    return _float(_first(course, ("distance_course", "distance", "distanceCourse", "distanceMetres"), 0), 0)
+
+
+def _start_type(course):
+    return _text(_first(course, ("type_depart", "typeDepart", "mode_depart", "modeDepart", "depart"), ""))
+
+
+def _is_autostart(course):
+    return "AUTO" in _start_type(course)
+
+
+def _race_profile(course, horses):
+    distance = _distance(course)
+    discipline = _text(course.get("discipline", ""))
+    start_type = _start_type(course)
+    runners = len([h for h in horses if isinstance(h, dict)])
+
+    profile = []
+    confidence = 0.45
+
+    if distance:
+        if distance <= 1600:
+            profile.append("course de vitesse")
+        elif distance <= 2200:
+            profile.append("distance intermédiaire")
+        elif distance <= 2700:
+            profile.append("distance de tenue")
+        else:
+            profile.append("course d'endurance")
+        confidence += 0.10
+
+    if _is_autostart(course):
+        profile.append("départ autostart : la mise en jambes et le placement comptent davantage")
+        confidence += 0.20
+    elif start_type:
+        profile.append("départ : " + start_type.lower())
+        confidence += 0.10
+
+    if runners:
+        profile.append(f"peloton de {runners} partants")
+
+    if not profile:
+        profile.append("profil de course partiellement documenté")
+
+    return {
+        "discipline": discipline or "NON DOCUMENTÉE",
+        "distance": distance,
+        "type_depart": start_type or "NON DOCUMENTÉ",
+        "partants": runners,
+        "lecture": profile,
+        "confiance": round(min(1.0, confidence), 2),
+    }
+
+
+def _horse_context(horse, course, profile):
+    score = 0.0
+    reasons = []
+    risks = []
+
+    distance = profile["distance"]
+    pref = _float(_first(horse, ("distance_predilection", "distance_pref", "distance_prefered"), 0), 0)
+    if distance and pref:
+        ecart = abs(distance - pref)
+        if ecart <= 100:
+            score += 9.0
+            reasons.append("distance très proche de sa préférence")
+        elif ecart <= 250:
+            score += 5.0
+        elif ecart >= 600:
+            score -= 5.0
+            risks.append("distance éloignée de sa préférence déclarée")
+
+    # Le numéro n'est interprété que lorsque la configuration du départ est connue.
+    # Renforcé : contrairement à forme/régularité/déferrage/cote (retirés
+    # d'ici car déjà comptés via indice_az), ce signal est réel, propre à
+    # l'autostart, et ne fait doublon avec aucun autre critère du moteur —
+    # il mérite donc un poids plus visible qu'un simple ajustement mineur.
+    numero = int(_float(horse.get("numero", 0), 0))
+    if numero and _is_autostart(course):
+        if numero in (2, 3, 4, 5):
+            score += 8.0
+            reasons.append("numéro favorable au placement à l'autostart")
+        elif numero in (1, 8, 9, 10, 11, 16):
+            score -= 6.0
+            risks.append("numéro potentiellement piégeux à l'autostart")
+
+    # CORRECTION : forme et régularité étaient comptées ici une 3e fois
+    # (après indice_az et l'ancienne formule Premium) — retiré, voir
+    # engine.calculer_indice_premium pour le détail. indice_az reste
+    # l'unique source de vérité pour ces deux critères.
+
+    # CORRECTION : le déferrage était lui aussi compté ici en plus
+    # d'indice_az (scoring.py) et de bonus_expert (engine.py) — retiré
+    # pour la même raison, voir engine.calculer_indice_premium.
+
+    # CORRECTION : "engagement" et "hausse/baisse de catégorie" ont été
+    # retirés — vérifié (recherche sur la structure réelle des données
+    # PMU) qu'aucun champ de ce type n'existe dans les données PMU
+    # réellement disponibles. Ces bonus ne se sont donc jamais déclenchés
+    # depuis leur écriture, et ne le pourront jamais sans une nouvelle
+    # source de données. Laisser du code qui ne s'exécute jamais donne
+    # une fausse impression d'analyse ; il vaut mieux le retirer
+    # franchement que le garder comme façade.
+
+    # Marché : utilisé comme information de contexte, jamais comme preuve de forme.
+    cote = _float(horse.get("cote", 0), 0)
+    variation = _float(horse.get("variation_cote_pct", 0), 0)
+    if variation <= -15:
+        score += 3.0
+        reasons.append("cote en baisse : soutien du marché à surveiller")
+    elif variation >= 20:
+        score -= 2.0
+        risks.append("cote en hausse : marché moins favorable")
+
+    # Entourage : on ne prétend pas mesurer sa qualité sans statistiques.
+    if horse.get("jockey") and horse.get("entraineur"):
+        reasons.append("couple jockey/entraîneur identifié dans les données")
+
+    # Une cote très basse n'est pas transformée automatiquement en bonus.
+    if cote and cote <= 3:
+        risks.append("favori de marché : risque de valeur faible si la cote est écrasée")
+
+    return {
+        "bonus": round(score, 2),
+        "raisons": reasons[:6],
+        "risques": risks[:5],
+    }
+
+
+def analyser_course_premium(course, horses):
+    """Analyse la course et fournit uniquement des signaux destinés au Premium."""
+    course = course if isinstance(course, dict) else {}
+    horses = horses if isinstance(horses, list) else []
+
+    profile = _race_profile(course, horses)
+    contexts = {}
+    for horse in horses:
+        if not isinstance(horse, dict):
+            continue
+        numero = str(horse.get("numero", ""))
+        contexts[numero] = _horse_context(horse, course, profile)
+
+    # Lecture synthétique : elle reste prudente si les données structurelles manquent.
+    all_reasons = []
+    all_risks = []
+    for context in contexts.values():
+        all_reasons.extend(context["raisons"])
+        all_risks.extend(context["risques"])
+
+    def top_unique(items, limit):
+        out = []
+        seen = set()
+        for item in items:
+            if item not in seen:
+                seen.add(item)
+                out.append(item)
+            if len(out) >= limit:
+                break
+        return out
+
+    return {
+        "profil_course": profile,
+        "signaux": {
+            "points_forts": top_unique(all_reasons, 5),
+            "points_attention": top_unique(all_risks, 5),
+        },
+        "chevaux": contexts,
+    }
+
+
+def bonus_premium_cheval(analysis, cheval):
+    """Retourne uniquement le bonus contextuel à intégrer à l'Indice Premium."""
+    if not isinstance(analysis, dict) or not isinstance(cheval, dict):
+        return 0.0
+    numero = str(cheval.get("numero", ""))
+    context = (analysis.get("chevaux") or {}).get(numero) or {}
+    return _float(context.get("bonus", 0), 0)
